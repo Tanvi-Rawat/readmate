@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../add.dart';
 
-// The class for the Userhome widget.
+
 class Userhome extends StatelessWidget {
   const Userhome({super.key});
 
-  // The build method is correctly placed inside the class.
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

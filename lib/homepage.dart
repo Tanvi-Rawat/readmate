@@ -10,7 +10,7 @@ import 'package:readmate/pages/page3.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
-  //when we want to build a screen that can change (update) while the app is running.
+
   @override
   _HomePageState createState() => _HomePageState();
 }
