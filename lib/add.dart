@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 
-class AddPage extends StatelessWidget {
+class AddPage extends StatefulWidget {
   const AddPage({super.key});
 
   @override
-  State<AddPage> createState() => _AddPageState();
+  State<AddPage> createState()  => _AddPageState();
 }
-class _AddPageState extends State<AddPageState>{
+class _AddPageState extends State<AddPage>{
   //text input
   final TextEditingController _bookNameController = TextEditingController();
   final TextEditingController _numPagesController = TextEditingController();
   final TextEditingController _readPageController = TextEditingController();
 
-}
+
 
 @override
 void dispose(){
@@ -30,7 +30,7 @@ void dispose(){
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation : 0,
-        action: [
+        actions: [
           IconButton(
             icon: const Icon(Icons.close),
             onPressed: () {
@@ -78,9 +78,26 @@ void dispose(){
               ),
             ),
 
-          ];
+            const SizedBox(height: 24),
+
+            //save button
+            ElevatedButton(
+                onPressed: _saveBookDetails, child: const Text('Save'),
+            ),
+
+          ],
         ),
       ),
+
     );
+  }
+
+  void _saveBookDetails() {
+  print('Book Name: ${_bookNameController.text}');
+  print('Total Page: ${_numPagesController.text}');
+  print('Current Page: ${_readPageController.text}');
+
+  Navigator.of(context).pop();
+
   }
 }
